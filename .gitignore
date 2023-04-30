@@ -1,2 +1,4 @@
 /venv
 holder.txt
+.env
+test.py

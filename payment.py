@@ -1,7 +1,14 @@
-key_secret = "CyTEzui6WJ44eOTtKh1CUCLo"
-key_id = "rzp_test_vWCHJvEZxYJNX5"
-
+import os
 import razorpay
+import dotenv
+
+dotenv_file = os.path.join(".env")
+
+if os.path.isfile(dotenv_file):
+    dotenv.load_dotenv(dotenv_file)
+
+key_secret = os.environ['KEY_SECRET']
+key_id = os.environ['KEY_ID']
 
 client = razorpay.Client(auth = (key_id, key_secret))
 
